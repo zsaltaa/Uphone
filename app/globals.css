@@ -1,0 +1,244 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   Uphone Design Tokens — Light (Default), Dark & Custom Theme Foundations
+   ========================================================================== */
+:root {
+  /* Color System — Cream White, Nude Pink, Dusty Rose, Champagne & Soft Lavender */
+  --uphone-bg: #fbf7f4;
+  --uphone-surface: #fffdfb;
+  --uphone-surface-elevated: #ffffff;
+  --uphone-surface-muted: #f5ecea;
+  --uphone-border: rgba(164, 114, 121, 0.13);
+  --uphone-border-strong: rgba(164, 114, 121, 0.23);
+
+  --uphone-text: #3b2c30;
+  --uphone-text-muted: #7b666b;
+  --uphone-text-subtle: #a38e93;
+
+  --uphone-accent: #a45b66;
+  --uphone-accent-fg: #ffffff;
+  --uphone-accent-soft: rgba(164, 91, 102, 0.11);
+
+  --uphone-champagne: #f6ede2;
+  --uphone-lavender-soft: rgba(155, 136, 180, 0.12);
+  --uphone-blush-soft: rgba(232, 198, 194, 0.24);
+  --uphone-card-champagne: linear-gradient(135deg, #ffffff 0%, #fcf6ef 100%);
+  --uphone-card-blush: linear-gradient(135deg, #ffffff 0%, #fbf1ef 100%);
+  --uphone-card-lavender: linear-gradient(135deg, #ffffff 0%, #f5f1fa 100%);
+  --uphone-card-note: linear-gradient(135deg, #ffffff 0%, #faf3f1 100%);
+
+  --uphone-input-bg: #f6efec;
+  --uphone-popover-bg: rgba(255, 252, 250, 0.92);
+  --uphone-topbar-bg: rgba(251, 247, 244, 0.82);
+  --uphone-overlay: rgba(59, 44, 48, 0.28);
+
+  /* Chat Bubbles */
+  --uphone-bubble-self: #a45b66;
+  --uphone-bubble-self-fg: #ffffff;
+  --uphone-bubble-other: #ffffff;
+  --uphone-bubble-other-fg: #3b2c30;
+
+  /* Semantic States */
+  --uphone-success: #5a7f6a;
+  --uphone-success-soft: rgba(90, 127, 106, 0.12);
+  --uphone-warning: #b0794a;
+  --uphone-warning-soft: rgba(176, 121, 74, 0.12);
+  --uphone-danger: #c04e5d;
+  --uphone-danger-soft: rgba(192, 78, 93, 0.12);
+
+  /* Radius Scale */
+  --uphone-radius-sm: 0.75rem;   /* 12px */
+  --uphone-radius-md: 1rem;      /* 16px */
+  --uphone-radius-lg: 1.25rem;   /* 20px */
+  --uphone-radius-xl: 1.5rem;    /* 24px */
+  --uphone-radius-2xl: 1.875rem; /* 30px */
+
+  /* Shadow Elevation — Warm Rose-Taupe Diffused Glow */
+  --uphone-shadow-xs: 0 1px 3px rgba(96, 62, 68, 0.04);
+  --uphone-shadow-sm: 0 4px 16px rgba(96, 62, 68, 0.05), 0 1px 3px rgba(96, 62, 68, 0.03);
+  --uphone-shadow-md: 0 12px 32px rgba(96, 62, 68, 0.08), 0 3px 8px rgba(96, 62, 68, 0.04);
+  --uphone-shadow-lg: 0 22px 52px rgba(96, 62, 68, 0.12), 0 6px 14px rgba(96, 62, 68, 0.05);
+
+  /* Spacing & Layout Constants */
+  --uphone-page-px: 1rem;
+  --uphone-topbar-h: 3.25rem;    /* 52px */
+  --uphone-bottombar-h: 3.75rem; /* 60px */
+
+  /* Safe Area & Keyboard Insets */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --uphone-keyboard-offset: 0px;
+  --uphone-font-scale: 1;
+}
+
+.dark {
+  --uphone-bg: #171216;
+  --uphone-surface: #211a20;
+  --uphone-surface-elevated: #282026;
+  --uphone-surface-muted: #32272f;
+  --uphone-border: rgba(244, 224, 228, 0.1);
+  --uphone-border-strong: rgba(244, 224, 228, 0.18);
+
+  --uphone-text: #f7eef0;
+  --uphone-text-muted: #beaab0;
+  --uphone-text-subtle: #8f7b82;
+
+  --uphone-accent: #dfa3ad;
+  --uphone-accent-fg: #231418;
+  --uphone-accent-soft: rgba(223, 163, 173, 0.16);
+
+  --uphone-champagne: #2f2527;
+  --uphone-lavender-soft: rgba(182, 162, 214, 0.15);
+  --uphone-blush-soft: rgba(223, 163, 173, 0.14);
+  --uphone-card-champagne: linear-gradient(135deg, #282026 0%, #2f2428 100%);
+  --uphone-card-blush: linear-gradient(135deg, #282026 0%, #30232a 100%);
+  --uphone-card-lavender: linear-gradient(135deg, #282026 0%, #2b2332 100%);
+  --uphone-card-note: linear-gradient(135deg, #282026 0%, #2d2329 100%);
+
+  --uphone-input-bg: #2b2229;
+  --uphone-popover-bg: rgba(38, 30, 36, 0.92);
+  --uphone-topbar-bg: rgba(23, 18, 22, 0.84);
+  --uphone-overlay: rgba(14, 10, 13, 0.56);
+
+  --uphone-bubble-self: #b9737d;
+  --uphone-bubble-self-fg: #ffffff;
+  --uphone-bubble-other: #282026;
+  --uphone-bubble-other-fg: #f7eef0;
+
+  --uphone-success: #8ec9a3;
+  --uphone-success-soft: rgba(142, 201, 163, 0.14);
+  --uphone-warning: #e5b884;
+  --uphone-warning-soft: rgba(229, 184, 132, 0.14);
+  --uphone-danger: #ee8b96;
+  --uphone-danger-soft: rgba(238, 139, 150, 0.14);
+
+  --uphone-shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.26);
+  --uphone-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --uphone-shadow-md: 0 12px 32px rgba(0, 0, 0, 0.42);
+  --uphone-shadow-lg: 0 22px 52px rgba(0, 0, 0, 0.54);
+}
+
+/* Reserved Custom Theme Base — Soft Lavender & Champagne */
+[data-theme="custom"] {
+  --uphone-bg: #f7f4fa;
+  --uphone-surface: #fcfbfd;
+  --uphone-surface-elevated: #ffffff;
+  --uphone-surface-muted: #eee9f6;
+  --uphone-border: rgba(118, 96, 150, 0.13);
+  --uphone-border-strong: rgba(118, 96, 150, 0.22);
+
+  --uphone-text: #2f273b;
+  --uphone-text-muted: #726684;
+  --uphone-text-subtle: #9c90ad;
+
+  --uphone-accent: #7d649e;
+  --uphone-accent-fg: #ffffff;
+  --uphone-accent-soft: rgba(125, 100, 158, 0.12);
+
+  --uphone-champagne: #f3edf7;
+  --uphone-lavender-soft: rgba(125, 100, 158, 0.14);
+  --uphone-blush-soft: rgba(226, 206, 232, 0.24);
+  --uphone-card-champagne: linear-gradient(135deg, #ffffff 0%, #f7f2fb 100%);
+  --uphone-card-blush: linear-gradient(135deg, #ffffff 0%, #f9f1f7 100%);
+  --uphone-card-lavender: linear-gradient(135deg, #ffffff 0%, #f1ecf9 100%);
+  --uphone-card-note: linear-gradient(135deg, #ffffff 0%, #f6f2fa 100%);
+
+  --uphone-input-bg: #f1edf7;
+  --uphone-popover-bg: rgba(252, 251, 253, 0.92);
+  --uphone-topbar-bg: rgba(247, 244, 250, 0.84);
+  --uphone-overlay: rgba(47, 39, 59, 0.28);
+
+  --uphone-bubble-self: #7d649e;
+  --uphone-bubble-self-fg: #ffffff;
+  --uphone-bubble-other: #ffffff;
+  --uphone-bubble-other-fg: #2f273b;
+}
+
+@layer base {
+  html {
+    height: 100%;
+    font-size: calc(16px * var(--uphone-font-scale, 1));
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--uphone-bg);
+    color: var(--uphone-text);
+    font-family: var(
+      --uphone-font-family,
+      var(--font-sans-jakarta),
+      -apple-system,
+      BlinkMacSystemFont,
+      "PingFang SC",
+      "Hiragino Sans GB",
+      "Noto Sans SC",
+      "Microsoft YaHei",
+      sans-serif
+    );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    touch-action: manipulation;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--uphone-accent);
+    outline-offset: 2px;
+  }
+}
+
+.uphone-viewport {
+  min-height: 100dvh;
+  padding-top: var(--safe-top);
+  padding-right: var(--safe-right);
+  padding-bottom: calc(var(--safe-bottom) + var(--uphone-keyboard-offset));
+  padding-left: var(--safe-left);
+}
+
+.pt-safe {
+  padding-top: var(--safe-top);
+}
+
+.pb-safe {
+  padding-bottom: var(--safe-bottom);
+}
+
+.px-safe {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+.uphone-glass {
+  background-color: var(--uphone-popover-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.uphone-display-serif {
+  font-family: var(--font-serif-editorial), "Songti SC", "Noto Serif SC", Georgia, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

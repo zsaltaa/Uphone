@@ -1,0 +1,6 @@
+{
+  "name": "Uphone",
+  "description": "Cross-platform mobile-desktop AI roleplay chat workspace with character memory management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
